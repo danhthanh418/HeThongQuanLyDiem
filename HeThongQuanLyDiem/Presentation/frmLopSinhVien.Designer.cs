@@ -60,6 +60,7 @@
 			this.dbQuanLyDiemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dbQuanLyDiemDataSet = new HeThongQuanLyDiem.dbQuanLyDiemDataSet();
 			this.tbGioiTinh = new System.Windows.Forms.TextBox();
+			this.btnExportExcel = new System.Windows.Forms.Button();
 			this.panLopSinhVien.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSinhVienLop)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -87,6 +88,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.btnExportExcel);
 			this.groupBox1.Controls.Add(this.tbGioiTinh);
 			this.groupBox1.Controls.Add(this.tbTimKiem);
 			this.groupBox1.Controls.Add(this.label10);
@@ -125,7 +127,7 @@
 			// 
 			this.tbTimKiem.Location = new System.Drawing.Point(525, 147);
 			this.tbTimKiem.Name = "tbTimKiem";
-			this.tbTimKiem.Size = new System.Drawing.Size(353, 20);
+			this.tbTimKiem.Size = new System.Drawing.Size(234, 20);
 			this.tbTimKiem.TabIndex = 34;
 			this.tbTimKiem.TextChanged += new System.EventHandler(this.tbTimKiem_TextChanged);
 			// 
@@ -355,6 +357,15 @@
 			this.tbGioiTinh.Size = new System.Drawing.Size(68, 20);
 			this.tbGioiTinh.TabIndex = 35;
 			// 
+			// btnExportExcel
+			// 
+			this.btnExportExcel.Location = new System.Drawing.Point(775, 143);
+			this.btnExportExcel.Name = "btnExportExcel";
+			this.btnExportExcel.Size = new System.Drawing.Size(75, 23);
+			this.btnExportExcel.TabIndex = 36;
+			this.btnExportExcel.Text = "Export Excel";
+			this.btnExportExcel.UseVisualStyleBackColor = true;
+			// 
 			// frmLopSinhVien
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +418,6 @@
 		private System.Windows.Forms.ComboBox cbDanhSachLop;
 		private System.Windows.Forms.DataGridView dgvSinhVienLop;
 		private System.Windows.Forms.TextBox tbGioiTinh;
+		private System.Windows.Forms.Button btnExportExcel;
 	}
 }

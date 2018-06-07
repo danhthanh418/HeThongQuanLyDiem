@@ -27,11 +27,11 @@ namespace HeThongQuanLyDiem.Presentation
 			cbDanhSachLop.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbDanhSachLop.DisplayMember = "tenLop";
 			cbDanhSachLop.ValueMember = "maLop";
-			refreshData();
+			bindingLop();
 			tbMaSV.ReadOnly = true;
 		}
 
-		private void refreshData()
+		private void bindingLop()
 		{
 			cbDanhSachLop.DataSource = xuLyDuLieu.Lop_SelectAll(duLieu);
 			tbMaLop.DataBindings.Clear();
@@ -127,6 +127,11 @@ namespace HeThongQuanLyDiem.Presentation
 			tbDanToc.Clear();
 			tbMaSV.Focus();
 			addSV = true;
+			dtpNgaySinh.Value = DateTime.Parse("1/1/1997");
+			tbMaSV.Text = tbMaLop.Text.Trim().Remove(4,2);
+			tbGioiTinh.Text = "1";
+			tbDanToc.Text = "Kinh";
+			btnThemSV.Enabled = false;
 		}
 
 		private void btnLuuSV_Click(object sender, EventArgs e)
@@ -152,6 +157,7 @@ namespace HeThongQuanLyDiem.Presentation
 				tbMaLop.ReadOnly = true;
 				MessageBox.Show("Cập nhật sv thành công");
 			}
+			btnThemSV.Enabled = true;
 			loadGVSV();
 		}
 
@@ -161,6 +167,7 @@ namespace HeThongQuanLyDiem.Presentation
 			xuLyDuLieu.SinhVien_Delete(duLieu);
 			tbMaLop.ReadOnly = true;
 			MessageBox.Show("Xoá sv thành công");
+			btnThemSV.Enabled = true;
 			loadGVSV();
 		}
 
@@ -170,6 +177,8 @@ namespace HeThongQuanLyDiem.Presentation
 			duLieu.hoTen = tbTimKiem.Text;
 			duLieu.noiSinh = tbTimKiem.Text;
 			dgvSinhVienLop.DataSource = xuLyDuLieu.SinhVien_Search(duLieu);
+			bindingSinhVien(dgvSinhVienLop.DataSource);
 		}
+
 	}
 }
