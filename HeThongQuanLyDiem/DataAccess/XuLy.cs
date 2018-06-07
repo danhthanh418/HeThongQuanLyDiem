@@ -9,7 +9,7 @@ using System.Data;
 
 namespace HeThongQuanLyDiem.DataAccess
 {
-	class XyLy
+	class XuLy
 	{
 		//Tạo chuỗi kết nối
 		SqlConnection conn = new SqlConnection(ConfigurationSettings.AppSettings["StringConn"]);
@@ -33,9 +33,11 @@ namespace HeThongQuanLyDiem.DataAccess
 		{
 			conn.Open();
 			//Khỏi tạo biến command với 2 parameter sql,conn
-			cmd = new SqlCommand(sql,conn);
+
+			cmd = new SqlCommand(sql, conn);
 			//Thực thi câu lệnh	
 			cmd.ExecuteNonQuery();
+		
 			cmd.Dispose();
 			//Đóng kết nối
 			conn.Close();
